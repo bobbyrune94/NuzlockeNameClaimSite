@@ -1,0 +1,9 @@
+<div class="PageContent container">
+    <h3>Streamers with Claim Tables:</h3>
+    <div class="Streamer Streamer-list">
+        <a class="Streamer-entry btn btn-outline-primary" role="button" *ngFor="let streamer of streamers" [routerLink]="['/table', streamer.claimsTableName]">
+            <img class="Streamer-logo" src="assets/streamers/{{ streamer.name }}.png" alt="{{ streamer.name }} Logo">
+            <p class="Streamer-name">{{ streamer.name }}</p>
+        </a>
+    </div>
+</div>

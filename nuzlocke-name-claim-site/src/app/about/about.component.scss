@@ -1,0 +1,30 @@
+.About {
+    &-section {
+        margin-bottom: 32px;
+    }
+
+    &-image {
+        width: 50%;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    &-imageFull {
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    &-listHeader {
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 775px) {
+    .About {
+        &-image {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

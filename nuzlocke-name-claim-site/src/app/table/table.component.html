@@ -1,0 +1,47 @@
+<div class="PageContent container">
+    <h3>{{ claimsTable }}</h3>
+    <form class="Table-search Form" (ngSubmit)="search($event)">
+        <h4>Search</h4>
+        <div class="Form-body">
+            <div class="form-group">
+                <label for="pokemon">By Pokemon</label>
+                <select class="form-control" name="pokemon" searchable="Search here..." #PokemonSelect disabled>
+                    <option value="" disabled selected>Choose a Pokemon</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="claimer">By Claimer</label>
+                <input type="text" class="form-control" name="claimer" placeholder="Enter Discord Name" #ClaimerSelect disabled>
+            </div>
+            <div class="form-group">
+                <label for="claimed">By Claim Status</label>
+                <select class="form-control" id="claimed" (change)="changeClaimer($event)" #StatusSelect disabled>
+                    <option value="None"></option>
+                    <option value="True">Claimed</option>
+                    <option value="False">Unclaimed</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" disabled #SubmitButton>Search</button>
+        <button type="reset" (click)="clearSearch()" class="Form-clearButton btn btn-primary" disabled #ClearButton>Clear Search</button>
+    </form>
+    <p #ResultsText></p>
+    <div class="Table">
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Dex Num</th>
+                    <th scope="col">Pokemon</th>
+                    <th scope="col"></th>
+                    <th scope="col">Claimer</th>
+                    <th scope="col">Nickname</th>
+                    <th scope="col">Permanent?</th>
+                </tr>
+            </thead>
+            <tbody class="Table-body" #TableBody>
+    
+            </tbody>
+        </table>
+    </div>
+    <p class="Table-loading" #TableLoading>Table Loading</p>
+</div>

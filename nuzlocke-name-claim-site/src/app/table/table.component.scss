@@ -1,0 +1,33 @@
+.Table {
+    &-pokemonSprite {
+        width: 100px;
+        height: auto;
+    }
+
+    &-entryKey,
+    &-entryText {
+        vertical-align: middle !important;
+    }
+}
+
+.Form {
+    background-color: #e9ecef;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 16px;
+
+    &-body {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    &-clearButton {
+        margin-left: 16px;
+    }
+}
+
+@media(max-width: 775px) {
+    .Table {
+        overflow-x: scroll;
+    }
+}
