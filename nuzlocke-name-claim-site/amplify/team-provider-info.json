@@ -10,11 +10,6 @@
       "StackName": "amplify-nuzlockeclaimsite-dev-224852",
       "StackId": "arn:aws:cloudformation:us-west-2:292437101577:stack/amplify-nuzlockeclaimsite-dev-224852/85fa2100-f043-11ec-b565-022b5410d25b",
       "AmplifyAppId": "d3os4jjnr4he8t"
-    },
-    "categories": {
-      "auth": {
-        "nuzlockeclaimsite5a888672": {}
-      }
     }
   }
 }
