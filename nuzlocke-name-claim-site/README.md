@@ -1,6 +1,6 @@
 # NuzlockeNameClaimSite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3. It's used to display the claims that users have made using the Discord Bot (https://github.com/bobbyrune94/NuzlockeNameClaimBot) and display them in a more user-friendly way to allow users to view and search through the hundreds of available Pokemon. You are able to see all streamers who have been onboarded to use the discord bot and their associated claims tables.
 
 ## Development server
 
