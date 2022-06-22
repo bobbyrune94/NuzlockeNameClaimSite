@@ -3,15 +3,15 @@
         <div class="About-section">
             <h3 class="About=header">Want Your Viewers and Community to Nickname Your Nuzlocke Team?</h3>
             <p>If you bring this discord bot into your server, you can let your community use commands to claim and nickname any Pokemon. People can make claims, view claims, edit their nicknames, change their claims, and remove claims through the bot using structured Discord commands.</p>
-            <img class="About-image" src="assets/about/commands.PNG" alt="Discord Bot Commands Img">
+            <img class="About-image" src="assets/about/commands.png" alt="Discord Bot Commands Img">
             <p>Selecting a command will automatically bring up all the parameters to populate.</p>
-            <img class="About-image" src="assets/about/commandParams.PNG" alt="Discord Bot Claim Command Parameters">
+            <img class="About-image" src="assets/about/commandParams.png" alt="Discord Bot Claim Command Parameters">
         </div>
         <div class="About-section">
             <h3 class="About=header">Tech Breakdown</h3>
             <div class="About-subSection">
                 <h4 class="About=subHeader">System Diagram</h4>
-                <img class="About-imageFull" src="assets/about/diagram.PNG" alt="System Diagram">
+                <img class="About-imageFull" src="assets/about/diagram.png" alt="System Diagram">
                 <p>The Nuzlocke Name Claim System is fairly simple. Broken down to its simplest components, it’s a database that stores data and a discord bot that views and modifies that data. Everything else around it is used to help with that functionality.</p>
                 <ol>
                     <li>
@@ -47,12 +47,12 @@
             </div>
             <div class="About-subSection">
                 <h4 class="About=subHeader">Evolution Lines Table</h4>
-                <img class="About-image" src="assets/about/evoLinesTable.PNG" alt="Evolution Lines Table">
+                <img class="About-image" src="assets/about/evoLinesTable.png" alt="Evolution Lines Table">
                 <p>This table stores all the evolution lines and essential information for each pokemon. The most important data here is the evo-line field. Any time a claim comes in, it checks this table to see what other Pokemon are in that evolutionary line that will also get claimed. </p>
             </div>
             <div class="About-subSection">
                 <h4 class="About=subHeader">Claims Tables</h4>
-                <img class="About-image" src="assets/about/claimTable.PNG" alt="Claims Table Sample">
+                <img class="About-image" src="assets/about/claimTable.png" alt="Claims Table Sample">
                 <p>These tables store every single pokemon available to claim. Unclaimed pokemon will have UNDEFINED in the nickname while claimed pokemon (see Jolteon) will display the nickname and claimer’s discord username and ID. It also stores the next time the user can change their claim, as changing claims is restricted to once every 3 months.</p>
                 <p>This website takes the data from these tables and displays it in a more easily consumable and searchable format. </p>
             </div>
