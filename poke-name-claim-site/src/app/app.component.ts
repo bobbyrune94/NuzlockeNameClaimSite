@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nuzlocke-name-claim-site';
+  title = 'poke-name-claim-site';
 }

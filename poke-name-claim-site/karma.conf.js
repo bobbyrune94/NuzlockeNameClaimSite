@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/nuzlocke-name-claim-site'),
+      dir: require('path').join(__dirname, './coverage/poke-name-claim-site'),
       subdir: '.',
       reporters: [
         { type: 'html' },
