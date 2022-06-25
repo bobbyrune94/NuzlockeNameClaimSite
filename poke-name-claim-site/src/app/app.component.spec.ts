@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nuzlocke-name-claim-site'`, () => {
+  it(`should have as title 'poke-name-claim-site'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nuzlocke-name-claim-site');
+    expect(app.title).toEqual('poke-name-claim-site');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('nuzlocke-name-claim-site app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('poke-name-claim-site app is running!');
   });
 });
