@@ -2,7 +2,7 @@
     <div class="About">
         <div class="About-section">
             <h3 class="About=header">Want Your Viewers and Community to Nickname Your Playthrough Team?</h3>
-            <p>If you bring this discord bot into your server, you can let your community use commands to claim and nickname any Pokemon. People can make claims, view claims, edit their nicknames, change their claims, and remove claims through the bot using structured Discord commands.</p>
+            <p>If you bring this discord bot into your server, you can let your community use commands to claim and nickname any Pokémon. People can make claims, view claims, edit their nicknames, change their claims, and remove claims through the bot using structured Discord commands.</p>
             <img class="About-image" src="assets/about/commands.png" alt="Discord Bot Commands Img">
             <p>Selecting a command will automatically bring up all the parameters to populate.</p>
             <img class="About-image" src="assets/about/commandParams.png" alt="Discord Bot Claim Command Parameters">
@@ -12,7 +12,7 @@
             <div class="About-subSection">
                 <h4 class="About=subHeader">System Diagram</h4>
                 <img class="About-imageFull" src="assets/about/diagram.png" alt="System Diagram">
-                <p>The PokeNameBot System is fairly simple. Broken down to its simplest components, it’s a database that stores data and a discord bot that views and modifies that data. Everything else around it is used to help with that functionality.</p>
+                <p>The PokéNameBot System is fairly simple. Broken down to its simplest components, it’s a database that stores data and a discord bot that views and modifies that data. Everything else around it is used to help with that functionality.</p>
                 <ol>
                     <li>
                         <span class="About-listHeader">
@@ -23,7 +23,7 @@
                         <span class="About-listHeader">
                             The Discord Bot: 
                         </span>
-                        This is the primary interface for the system. Through the discord bot, you can make claims, edit existing claims, and view claim data for yourself and any Pokemon available. 
+                        This is the primary interface for the system. Through the discord bot, you can make claims, edit existing claims, and view claim data for yourself and any Pokémon available. 
                     </li>
                     <li>
                         <span class="About-listHeader">
@@ -35,7 +35,7 @@
                         <span class="About-listHeader">
                             Lambda Functions: 
                         </span>
-                        This is how we actually manipulate and grab data from the databases. Depending on the functionality, the lambdas can edit tables to make/change a claim or get single entries or whole tables. I’ve also made lambdas to make onboarding new Pokemon and discord servers easier for my future sanity.
+                        This is how we actually manipulate and grab data from the databases. Depending on the functionality, the lambdas can edit tables to make/change a claim or get single entries or whole tables. I’ve also made lambdas to make onboarding new Pokémon and discord servers easier for my future sanity.
                     </li>
                     <li>
                         <span class="About-listHeader">
@@ -48,12 +48,12 @@
             <div class="About-subSection">
                 <h4 class="About=subHeader">Evolution Lines Table</h4>
                 <img class="About-image" src="assets/about/evoLinesTable.png" alt="Evolution Lines Table">
-                <p>This table stores all the evolution lines and essential information for each pokemon. The most important data here is the evo-line field. Any time a claim comes in, it checks this table to see what other Pokemon are in that evolutionary line that will also get claimed. </p>
+                <p>This table stores all the evolution lines and essential information for each pokémon. The most important data here is the evo-line field. Any time a claim comes in, it checks this table to see what other Pokémon are in that evolutionary line that will also get claimed. </p>
             </div>
             <div class="About-subSection">
                 <h4 class="About=subHeader">Claims Tables</h4>
                 <img class="About-image" src="assets/about/claimTable.png" alt="Claims Table Sample">
-                <p>These tables store every single pokemon available to claim. Unclaimed pokemon will have UNDEFINED in the nickname while claimed pokemon (see Jolteon) will display the nickname and claimer’s discord username and ID. It also stores the next time the user can change their claim, as changing claims is restricted to once every 3 months.</p>
+                <p>These tables store every single pokémon available to claim. Unclaimed pokémon will have UNDEFINED in the nickname while claimed pokémon (see Jolteon) will display the nickname and claimer’s discord username and ID. It also stores the next time the user can change their claim, as changing claims is restricted to once every 3 months.</p>
                 <p>This website takes the data from these tables and displays it in a more easily consumable and searchable format. </p>
             </div>
         </div>
@@ -62,8 +62,8 @@
         <h3>Future Improvements</h3>
         <p>There is so much more we can do to improve this system to make it more user-friendly and offer more features. Some future additions will include:</p>
         <ul>
-            <li>Nightbot Command code to get claim data for a Pokemon</li>
-            <li>Showing the Evolution Lines for Each Pokemon on the Website</li>
+            <li>Nightbot Command code to get claim data for a Pokémon</li>
+            <li>Showing the Evolution Lines for Each Pokémon on the Website</li>
             <li>Adding Admin-Only Commands to change anyone's claim</li>
         </ul>
         <p>If you have any ideas on how to improve this system or have a feature you'd like to see, message Kenny on Discord at <a href="https://discordapp.com/users/689894489036161094/">bobbyrune94#9138</a> and he'll try to work on it in the future.</p>
