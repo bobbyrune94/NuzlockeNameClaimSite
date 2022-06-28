@@ -150,7 +150,7 @@ export class TableComponent implements OnInit {
         entry[1].style.visibility = "collapse";
         continue;
       }
-      if (claimerSearch != "" && claimerSearch.toLowerCase() != entry[0].claimer) {
+      if (claimerSearch != "" && !entry[0].claimer.toLowerCase().includes(claimerSearch.toLowerCase())) {
         entry[1].style.visibility = "collapse";
         continue;
       }
