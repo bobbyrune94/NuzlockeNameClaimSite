@@ -103,7 +103,8 @@ export class TableComponent implements OnInit {
 
     const pokemon = this.document.createElement('td');
     pokemon.setAttribute('class', 'Table-entryText');
-    if(entry.pokemon.includes("-")) {
+    let prettyName = prettyPrintPokemonName(entry.pokemon);
+    if(prettyName.toLowerCase() != entry.pokemon) {
       pokemon.innerHTML = prettyPrintPokemonName(entry.pokemon) + " (" + entry.pokemon + ")";
     }
     else {
