@@ -1,16 +1,113 @@
 <div class="PageContent container">
     <div class="About">
         <div class="About-section">
-            <h3 class="About=header">Want Your Viewers and Community to Nickname Your Playthrough Team?</h3>
+            <h3 class="About-header">Want Your Viewers and Community to Nickname Your Playthrough Team?</h3>
             <p>If you bring this discord bot into your server, you can let your community use commands to claim and nickname any Pokémon. People can make claims, view claims, edit their nicknames, change their claims, and remove claims through the bot using structured Discord commands.</p>
             <img class="About-image" src="assets/about/commands.png" alt="Discord Bot Commands Img">
             <p>Selecting a command will automatically bring up all the parameters to populate.</p>
             <img class="About-image" src="assets/about/commandParams.png" alt="Discord Bot Claim Command Parameters">
         </div>
         <div class="About-section">
-            <h3 class="About=header">Tech Breakdown</h3>
+            <h3 class="About-header" id="About-details">PokéNameBot Details</h3>
+            <ul>
+                <li>
+                    Claiming a Pokémon will also claim its associated evolution line
+                    <ul>
+                        <li>
+                            <span class="bold">Exception:</span> branched evolutions are split into their “primary” line (original evolution line) and “secondary” line (later additions)
+                            <ul>
+                                <li>
+                                    <span class="bold">Example:</span> the Poliwag line is split into the primary line: [Poliwag, Poliwhirl, Poliwrath] and the secondary line [Politoed]
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="bold">Exception:</span> multi-branched evolutions are to be claimed independently
+                            <ul>
+                                <li>
+                                    <span class="bold">Example:</span> Eevee and its evolutions are all split up. One person claims Eevee, another claims Vaporeon, another claims Jolteon, etc.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Regional Variants can be claimed separately.
+                    <ul>
+                        <li>
+                            <span class="bold">Example:</span> One person can claim Kantonian Vulpix while another can claim Alolan Vulpix
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Users can nickname Pokémon based on their genders, but this will only work on Pokémon that have 2 genders. Use the “gendered” subcommand to do that (“/claim gendered …”)
+                    <ul>
+                        <li>
+                            <span class="bold">Example:</span> You may nickname the shinx line Tiggs for males and Tigress for females, but not a Porygon (genderless) or Nidoqueen (only female)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Once you claim a Pokémon, you cannot change that Pokémon for 3 months. You are still free to edit the nickname as much as you want to
+                </li>
+                <li>
+                    Server admin will decide which roles are allowed to make permanent claims (ex. Mods and T3 subs can make permanent claims, everyone’s claim is permanent, etc.). All transient (non-permanent) claims will be wiped on Jan 1st every year.
+                </li>
+                <li>
+                    There is a 15 second cooldown between commands to prevent command spam. The bot will send a follow up message once your cooldown is up.
+                    <ul>
+                        <li>
+                            <span class="bold">Exception:</span> you can call the /directions command as often as you want
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    The list of Pokémon available to claim should be up to date with the most recent games. If not, then the new Pokémon should be added soon (whenever Kenny has time to accumulate that data)
+                </li>
+            </ul>
+            <p>Special Notes to be Aware of:</p>
+            <ul>
+                <li>
+                    <span class="bold">Name Formatting:</span> some pokemon with special characters or spaces in their names needed to be formatted differently.
+                    <ul>
+                        <li><span class="bold">Mime Family:</span> Replace the space with a dash (-). I.e. mr-mime, mr-rime, mime-jr</li>
+                        <li><span class="bold">Farfetch’d Line:</span> Remove the apostrophe. I.e. farfetchd, sirfetchd</li>
+                        <li><span class="bold">Regional Variants:</span> add a dash (-), then the region they came from. Example: vulpix-alola, meowth-galar, qwilfish-hisui</li>
+                    </ul>
+                </li>
+                <li>
+                    Special Evolution Lines
+                    <ul>
+                        <li>
+                            <span class="bold">Wurmple Line:</span> since Wurmple evolves randomly into Silcoon or Cascoon, we are dividing it into 3 claimable lines
+                            <ul>
+                                <li>Wurmple</li>
+                                <li>Silcoon/Beautifly</li>
+                                <li>Cascoon/Dustox</li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <span class="bold">Burmy Line:</span> Burmy is a gender-based evolution, not a branched evolution like an initial look would tell you. Male burmy become Mothim while females become Wormadam. Thus, we’re treating it like a standard evolution line; claiming any one of those will give you all three.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="About-section">
+            <h3>Interested?</h3>
+            <p>Message Kenny on Discord at <a href="https://discordapp.com/users/689894489036161094/">bobbyrune94#9138</a> and he can walk you through the steps to onboard your discord server into the system.</p>
+            <p>Some initial considerations to make before onboarding:</p>
+            <ul>
+                <li>Who do you want to make claims in your community? Do you want anyone in your server to make a claim or only Subscribers?</li>
+                <li>Whose claims do you want to be permanent? Do you want all claims to be permanent or only your most loyal supporters and moderators?</li>
+            </ul>
+        </div>
+        <div class="About-section">
+            <h3 class="About-header">Tech Breakdown</h3>
             <div class="About-subSection">
-                <h4 class="About=subHeader">System Diagram</h4>
+                <h4 class="About-subHeader">System Diagram</h4>
                 <img class="About-imageFull" src="assets/about/diagram.png" alt="System Diagram">
                 <p>The PokéNameBot System is fairly simple. Broken down to its simplest components, it’s a database that stores data and a discord bot that views and modifies that data. Everything else around it is used to help with that functionality.</p>
                 <ol>
@@ -46,12 +143,12 @@
                 </ol>
             </div>
             <div class="About-subSection">
-                <h4 class="About=subHeader">Evolution Lines Table</h4>
+                <h4 class="About-subHeader">Evolution Lines Table</h4>
                 <img class="About-image" src="assets/about/evoLinesTable.png" alt="Evolution Lines Table">
                 <p>This table stores all the evolution lines and essential information for each pokémon. The most important data here is the evo-line field. Any time a claim comes in, it checks this table to see what other Pokémon are in that evolutionary line that will also get claimed. </p>
             </div>
             <div class="About-subSection">
-                <h4 class="About=subHeader">Claims Tables</h4>
+                <h4 class="About-subHeader">Claims Tables</h4>
                 <img class="About-image" src="assets/about/claimTable.png" alt="Claims Table Sample">
                 <p>These tables store every single pokémon available to claim. Unclaimed pokémon will have UNDEFINED in the nickname while claimed pokémon (see Jolteon) will display the nickname and claimer’s discord username and ID. It also stores the next time the user can change their claim, as changing claims is restricted to once every 3 months.</p>
                 <p>This website takes the data from these tables and displays it in a more easily consumable and searchable format. </p>
@@ -67,9 +164,5 @@
             <li>Adding Admin-Only Commands to change anyone's claim</li>
         </ul>
         <p>If you have any ideas on how to improve this system or have a feature you'd like to see, message Kenny on Discord at <a href="https://discordapp.com/users/689894489036161094/">bobbyrune94#9138</a> and he'll try to work on it in the future.</p>
-    </div>
-    <div class="About-section">
-        <h3>Interested?</h3>
-        <p>Message Kenny on Discord at <a href="https://discordapp.com/users/689894489036161094/">bobbyrune94#9138</a> and he can walk you through the steps to onboard your discord server into the system.</p>
     </div>
 </div>

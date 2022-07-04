@@ -21,6 +21,20 @@
                     <option value="False">Unclaimed</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="generation">By Generation</label>
+                <select class="form-control" name="generation" #GenSelect disabled>
+                    <option value=""></option>
+                    <option value="1">Gen 1</option>
+                    <option value="2">Gen 2</option>
+                    <option value="3">Gen 3</option>
+                    <option value="4">Gen 4</option>
+                    <option value="5">Gen 5</option>
+                    <option value="6">Gen 6</option>
+                    <option value="7">Gen 7</option>
+                    <option value="8">Gen 8</option>
+                </select>
+            </div>
         </div>
         <button type="submit" class="btn btn-primary" disabled #SubmitButton>Search</button>
         <button type="reset" (click)="clearSearch()" class="Form-clearButton btn btn-primary" disabled #ClearButton>Clear Search</button>

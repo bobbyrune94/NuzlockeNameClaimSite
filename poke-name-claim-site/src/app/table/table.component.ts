@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
   @ViewChild('PokemonSelect') pokemonSelect!: ElementRef;
   @ViewChild('ClaimerSelect') claimerSelect!: ElementRef;
   @ViewChild('StatusSelect') statusSelect!: ElementRef;
+  @ViewChild('GenSelect') genSelect!: ElementRef;
   @ViewChild('SubmitButton') submitButton!: ElementRef;
   @ViewChild('ClearButton') clearButton!: ElementRef;
   @ViewChild('ResultsText') resultText!: ElementRef;
@@ -80,6 +81,7 @@ export class TableComponent implements OnInit {
       this.pokemonSelect.nativeElement.disabled = false;
       this.claimerSelect.nativeElement.disabled = false;
       this.statusSelect.nativeElement.disabled = false;
+      this.genSelect.nativeElement.disabled = false;
       this.resultText.nativeElement.innerHTML = "Number of Results: " + this.claimsToElementMap.size;
     });
   }
@@ -101,7 +103,12 @@ export class TableComponent implements OnInit {
 
     const pokemon = this.document.createElement('td');
     pokemon.setAttribute('class', 'Table-entryText');
-    pokemon.innerHTML = prettyPrintPokemonName(entry.pokemon);
+    if(entry.pokemon.includes("-")) {
+      pokemon.innerHTML = prettyPrintPokemonName(entry.pokemon) + " (" + entry.pokemon + ")";
+    }
+    else {
+      pokemon.innerHTML = prettyPrintPokemonName(entry.pokemon);
+    }
 
     const pokemonSprite = this.document.createElement('td');
 
@@ -139,6 +146,7 @@ export class TableComponent implements OnInit {
     let form = e.target as HTMLFormElement;
     let pokemonSearch = form['pokemon'].value;
     let claimed = form['claimed'].value;
+    let genNumber = form['generation'].value;
     let claimerSearch = "";
     if(claimed != 'False') {
       claimerSearch = form['claimer'].value;
@@ -146,25 +154,29 @@ export class TableComponent implements OnInit {
 
     let resultsList: Array<PokemonEntry> = [];
     for (let entry of this.claimsToElementMap) {
+      if (!isInGeneration(genNumber, entry[0])) {
+        entry[1].style.display = "none";
+        continue;
+      }
       if (pokemonSearch != ""  && pokemonSearch.toLowerCase() != entry[0].pokemon) {
-        entry[1].style.visibility = "collapse";
+        entry[1].style.display = "none";
         continue;
       }
       if (claimerSearch != "" && !entry[0].claimer.toLowerCase().includes(claimerSearch.toLowerCase())) {
-        entry[1].style.visibility = "collapse";
+        entry[1].style.display = "none";
         continue;
       }
       if (claimed != 'None') {
         if (claimed == 'True' && entry[0].nickname == 'UNDEFINED') {
-          entry[1].style.visibility = "collapse";
+          entry[1].style.display = "none";
           continue;
         }
         else if (claimed == 'False' && entry[0].nickname != 'UNDEFINED') {
-          entry[1].style.visibility = "collapse";
+          entry[1].style.display = "none";
           continue;
         }
       }
-      entry[1].style.visibility = "visible";
+      entry[1].style.display = "";
       resultsList.push(entry[0]);
     }
 
@@ -173,19 +185,19 @@ export class TableComponent implements OnInit {
 
   public clearSearch() {
     for (let entry of this.claimsToElementMap) {
-      entry[1].style.visibility = "visible";
+      entry[1].style.display = "";
     }
     this.resultText.nativeElement.innerHTML = "Number of Results: " + this.claimsToElementMap.size;
   }
 
   public changeClaimer(e: Event) {
-      let form = e.target as HTMLSelectElement;
-      if (form.value === 'False') {
-        this.claimerSelect.nativeElement.disabled = true;
-      }
-      else {
-        this.claimerSelect.nativeElement.disabled = false;
-      }
+    let form = e.target as HTMLSelectElement;
+    if (form.value === 'False') {
+      this.claimerSelect.nativeElement.disabled = true;
+    }
+    else {
+      this.claimerSelect.nativeElement.disabled = false;
+    }
   }
 }
 
@@ -246,4 +258,39 @@ function prettyPrintPokemonName(pokemon: String) {
 
 function toCapitalCase(string: String) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function isInGeneration(genNumber, pokemonData) {
+  switch (genNumber) {
+    case "1":
+      return pokemonData.dex_number <= 151;
+    case "2":
+      return pokemonData.dex_number > 151 && pokemonData.dex_number <= 251;
+    case "3":
+      return pokemonData.dex_number > 251 && pokemonData.dex_number <= 386;
+    case "4":
+      return pokemonData.dex_number > 386 && pokemonData.dex_number <= 493;
+    case "5":
+      return pokemonData.dex_number > 493 && pokemonData.dex_number <= 649;
+    case "6":
+      return pokemonData.dex_number > 649 && pokemonData.dex_number <= 721;
+    case "7":
+      if(pokemonData.dex_number > 721 && pokemonData.dex_number <= 809)
+        return true;
+      else {
+        if(pokemonData.pokemon.includes("alola"))
+          return true;
+      }
+      return false;
+    case "8":
+      if(pokemonData.dex_number > 809 && pokemonData.dex_number <= 905)
+        return true;
+      else {
+        if(pokemonData.pokemon.includes("galar") || pokemonData.pokemon.includes("hisui"))
+          return true;
+      }
+      return false;
+    default:
+      return true;
+  }
 }
