@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { TableComponent } from './table/table.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
+import { UsageComponent } from './usage/usage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ErrorComponent } from './error/error.component';
     HomeComponent,
     TableComponent,
     AboutComponent,
-    ErrorComponent
+    ErrorComponent,
+    UsageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,110 @@
+<div class="PageContent container">
+    <div class="Usage-tableOfContents">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="/usage/#How">How to Call Commands</a></li>
+            <li>
+                <a href="/usage/#Commands">Commands</a>
+                <ul>
+                    <li><a href="/usage/#Directions">Directions</a></li>
+                    <li><a href="/usage/#Claim">Claim</a></li>
+                    <li><a href="/usage/#View">View</a></li>
+                    <li><a href="/usage/#Edit">Edit</a></li>
+                    <li><a href="/usage/#Change">Change</a></li>
+                    <li><a href="/usage/#Remove">Remove</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2 id="How">How to Call Commands</h2>
+        <p>To see all available commands that the bot has, type forward slash (/) and a menu should pop up with all available commands for all the discord bots in the server. Look for the seedot icon (the icon for this bot) and click that. That will bring up all the available commands registered in this bot.</p>
+        <img class="Usage-image" src="assets/about/commands.png" alt="Commands List">
+        <p>On mobile devices, it’ll look like this:</p>
+        <img class="Usage-image" src="assets/usage/mobile-commands.png" alt="Commands List">
+        <p>To choose a command, either click on it from the selection or start typing the command name and discord will try to autocomplete it for you. You can use your up/down arrow keys to move your selection and hit ENTER or click on the one you intend to use. </p>
+        <p>When you select a command, you’ll likely see something like the image below. The boxes indicate arguments that you need to pass to the command. </p>
+        <ol>
+            <li>Input a name for the pokemon you wish to claim, </li>
+            <li>You can either click into the box labeled “male-nickname” or press TAB. Mobile users can tap that box. Input your nickname for a pokemon of that species that is male.</li>
+            <li>Click into the “female-nickname” box or press TAB again. Once again, mobile users can tap that box. Input your nickname for a pokemon of that species that is female.</li>
+            <li>You may click back into any of the boxes again to fix any typos or misspellings. Once you are satisfied, press ENTER and let the bot do its magic.</li>
+        </ol>
+        <img class="Usage-sampleImage" src="assets/usage/claim-gendered.png" alt="Gendered Claim Command Example">
+    </div>
+    <div>
+        <h2 id="Commands">Commands</h2>
+        <div>
+            <h3 id="Directions">/Directions</h3>
+            <p>Gives an overview of all of the commands you can use with the discord bot. </p>
+            <img class="Usage-sampleImage" src="assets/usage/directions.png" alt="Directions Output">
+        </div>
+        <div>
+            <h3 id="Claim">/Claim</h3>
+            <p>Claims a Pokemon and its evolutionary line for the streamer to use in their playthrough. Each claim requires you to input a Pokemon name and the nickname that you want the streamer to use for that Pokemon. </p>
+            <p>There are two subcommands associated with this:</p>
+            <ul>
+                <li><p>Default: gives a nickname to the Pokemon no matter the gender. <span class="bold">Ex: /claim default eevee fluffy</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/claim-default.png" alt="Sample Default Claim Command">
+            <img class="Usage-sampleImage" src="assets/usage/claim-default-output.png" alt="Sample Default Claim Output">
+            <ul>                
+                <li><p>Gendered: allows you to give a nickname to a Pokemon depending on if it’s a male or female. When you input the nicknames, the male nickname comes first. <span class="bold">Ex: /claim gendered eevee adam eve</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/claim-gendered.png" alt="Sample Gendered Claim Command">
+            <img class="Usage-sampleImage" src="assets/usage/claim-gendered-output.png" alt="Sample Gendered Claim Output">
+
+        </div>
+        <div>
+            <h3 id="View">/View</h3>
+            <p>View the claim data for either your own claim or for a given Pokemon.</p>
+            <p>There are two subcommands associated with this:</p>
+            <ul>
+                <li><p>Claim: Views the claim that you made in the system. <span class="bold">Ex: /view claim</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/view-claim.png" alt="Sample View Claim Command">
+            <img class="Usage-sampleImage" src="assets/usage/view-claim-output.png" alt="Sample View Claim Output">
+            <ul>
+                <li><p>Pokemon: Views the claim data for the Pokemon that you choose. <span class="bold">Ex: /view pokemon eevee</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/view-pokemon.png" alt="Sample View Pokemon Command">
+            <img class="Usage-sampleImage" src="assets/usage/view-pokemon-output.png" alt="Sample View Pokemon Output">
+        </div>
+        <div>
+            <h3 id="Edit">/Edit</h3>
+            <p>Edits the nickname for all of your claim(s). </p>
+            <p>There are two subcommands associated with this:</p>
+            <ul>
+                <li><p>Default: changes the nickname to be one not attached to any gender. <span class="bold">Ex: /edit default fluffy</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/edit-default.png" alt="Sample Default Edit Command">
+            <img class="Usage-sampleImage" src="assets/usage/edit-default-output.png" alt="Sample Default Edit Output">
+            <ul>
+                <li><p>Gendered: changes the nickname to be one dependent on whether the caught Pokemon is male or female. The male nickname comes first when you input the two nicknames. <span class="bold">Ex: /edit gendered king queen</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/edit-gendered.png" alt="Sample Gendered Edit Command">
+            <img class="Usage-sampleImage" src="assets/usage/edit-gendered-output.png" alt="Sample Gendered Edit Output">
+        </div>
+        <div>
+            <h3 id="Change">/Change</h3>
+            <p>Changes your claim from one Pokemon evolutionary line to another. You can only do this once every 3 months.</p>
+            <p>Like /claim and /edit, there are two subcommands associated with this:</p>
+            <ul>
+                <li><p>Default: the new nickname will not be associated with the Pokemon’s gender. <span class="bold">Ex: /change default shinx tiger</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/change-default.png" alt="Sample Default Change Command">
+            <img class="Usage-sampleImage" src="assets/usage/change-default-output.png" alt="Sample Default Change Output">
+            <ul>
+                <li><p>Gendered: the new nickname will depend on the gender of the caught Pokemon. The male nickname comes first. <span class="bold">Ex: /change gendered shinx tiger tigress</span></p></li>
+            </ul>
+            <img class="Usage-sampleImage" src="assets/usage/change-gendered.png" alt="Sample Gendered Change Command">
+            <img class="Usage-sampleImage" src="assets/usage/change-gendered-output.png" alt="Sample Gendered Change Output">
+        </div>
+        <div>
+            <h3 id="Remove">/Remove</h3>
+            <p>Removes your claim from the streamer’s claim table and allows anyone else to claim the Pokemon evolutionary line you gave up. However, you cannot make another claim until 3 months after you initially made that claim. This was done so that people who wanted to change their claims early couldn’t simply remove, then claim again.</p>
+            <img class="Usage-sampleImage" src="assets/usage/remove.png" alt="Sample Remove Command">
+            <img class="Usage-sampleImage" src="assets/usage/remove-output.png" alt="Sample Remove Output">
+        </div>
+    </div>
+</div>
